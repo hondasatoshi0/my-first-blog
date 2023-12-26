@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-bm#^s@uuw(9d(h10j_1h$0=qx7twp-_^)g7(^a$ewcf5kmjwo2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com','.amazonaws.com']
+ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com','honsan.pythonanywhere.com','.amazonaws.com']
 
 CSRF_TRUSTED_ORIGINS    = [ "https://2daef2109cd646d9915a707d48c087c2.vfs.cloud9.us-east-1.amazonaws.com" ]
 
