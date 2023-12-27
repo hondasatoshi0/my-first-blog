@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .model import Post
+from .models import Post
 from django.utils import timezone
 
 # Create your views here.
