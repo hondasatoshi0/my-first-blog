@@ -52,5 +52,6 @@ def post_remove(request, pk):
     return redirect('post_list')
 
 
+# テスト
 def iot(request):
     return render(request, 'blog/iot.html',{})
