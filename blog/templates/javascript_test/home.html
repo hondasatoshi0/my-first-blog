@@ -1,0 +1,26 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<div class="page-header">
+    <h1><a href="">javascript テストページ</a></h1>
+</div>
+<div class="content container">
+    <div class="row">
+        <p>
+            <a class="btn-flat-border" href="{% url 'tutorial' %}">チュートリアル</a>
+        </p>
+        <p>
+            <a class="btn-flat-border" href="{% url 'number_guess' %}">数あてゲーム</a>
+        </p>
+        <p>
+            <a class="btn-flat-border" href="">test3</a>
+        </p>
+        <p>
+            <a class="btn-flat-border" href="">test4</a>
+        </p>
+        <p>
+            <a class="btn-flat-border" href="">test5</a>
+        </p>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>数当てゲーム</title>
+        
+        <style>
+            html {
+            font-family: sans-serif;
+            }
+            
+            body {
+            width: 50%;
+            max-width: 800px;
+            min-width: 480px;
+            margin: 0 auto;
+            }
+            
+            .form input[type="number"] {
+            width: 200px;
+            }
+            
+            .lastResult {
+            color: white;
+            padding: 3px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <button id="toggleBGM">BGMを再生/停止</button>
+        <h1>数当てゲーム</h1>
+        
+        <p>1から100までの数字をランダムで選択しました。10回以内に当てましょう。推測した数が正解値よりも大きいか小さいかだけを教えます。</p>
+        
+        <div class="form">
+            <label for="guessField">Enter a guess: </label>
+            <input type="number" min="1" max="100" required id="guessField" class="guessField">
+            <input type="submit" value="Submit guess" class="guessSubmit">
+        </div>
+        
+        <div class="resultParas">
+            <p class="guesses"></p>
+            <p class="lastResult"></p>
+            <p class="lowOrHi"></p>
+        </div>
+        
+        <script>
+            //変数・定数定義
+            let randomNumber = Math.floor(Math.random()* 100) + 1;
+            const guesses = document.querySelector(".guesses");
+            const lastResult = document.querySelector(".lastResult");
+            const lowOrHi = document.querySelector(".lowOrHi")
+            const guessSubmit = document.querySelector(".guessSubmit");
+            const guessField = document.querySelector(".guessField");
+            let guessCount = 1;
+            let resetButton;
+        
+            const goodAudio = new Audio("{% static 'music/正解.mp3' %}");
+            const badAudio = new Audio("{% static 'music/不正解.mp3' %}");
+            const bgm = new Audio("{% static 'music/M03_MusicBox_short_BPM70.mp3' %}");
+            bgm.loop = true;
+            bgm.play();
+            let isPlaying = true;
+            
+            document.getElementById('toggleBGM').addEventListener('click', () => {
+               if (isPlaying){
+                   bgm.pause();
+                   isPlaying = false;
+               } else {
+                   bgm.play();
+                   isPlaying = true;
+               }
+            });
+            
+            //関数定義
+            function checkGuess() {
+                const userGuess = Number(guessField.value);
+                if (guessCount === 1) {
+                    guesses.textContent = "Previous guesses:";
+                }
+                guesses.textContent = `${guesses.textContent} ${userGuess}`;
+                
+                // 正解した場合
+                if (userGuess === randomNumber) {
+                    goodAudio.play();
+                    lastResult.textContent = "おめでとう！正解です！";
+                    lastResult.style.backgroundColor = "green";
+                    lowOrHi.textContent = "";
+                    setGameOver();
+                // 回答数が規定数を超えた場合
+                } else if (guessCount === 10) {
+                    lastResult.textContent = "!!!はーいあなたの負けでーす!!!";
+                    lowOrHi.textContent = "";
+                    setGameOver();
+                // 不正解の場合
+                } else {
+                    badAudio.play();
+                    lastResult.textContent = "おしい！不正解！";
+                    lastResult.style.backgroundColor = "red";
+                    // 正解値よりも低い場合
+                    if (userGuess < randomNumber) {
+                        lowOrHi.textContent = "正解値よりも低いですね";
+                    // 正解値よりも高い場合
+                    } else if (userGuess > randomNumber) {
+                        lowOrHi.textContent = "正解値よりも大きいですね";
+                    }
+                }
+                
+                guessCount++;
+                guessField.value = "";
+                guessField.focus();
+            }
+            
+            guessSubmit.addEventListener("click", checkGuess);
+            
+            function setGameOver(){
+                guessField.disabled = true;
+                guessSubmit.disabled = true;
+                resetButton = document.createElement("button");
+                resetButton.textContent = "Start new game";
+                document.body.append(resetButton);
+                resetButton.addEventListener("click", resetGame);
+            }
+            
+            function resetGame(){
+                guessCount = 1;
+                const resetParas = document.querySelectorAll(".resultParas p")
+                for (const resetPara of resetParas){
+                    resetPara.textContent = "";
+                }
+                
+                resetButton.parentNode.removeChild(resetButton);
+                
+                guessField.disabled = false;
+                guessSubmit.disabled = false;
+                guessField.value = "";
+                guessField.focus()
+                
+                lastResult.style.backgroundColor = "white";
+                
+                randomNumber = Math.floor(Math.random() * 100) + 1;
+            }
+        
+        </script>
+    </body>
+</html>

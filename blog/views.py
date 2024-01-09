@@ -112,6 +112,12 @@ def comment_remove(request, pk):
     comment.delete()
     return redirect('post_detail', pk=comment.post.pk)
 
-# テスト
-def iot(request):
-    return render(request, 'blog/iot.html',{})
+# javascriptテスト用
+def javascript_test(request):
+    return render(request, 'javascript_test/home.html',{})
+
+def tutorial(request):
+    return render(request, 'javascript_test/tutorial.html',{})
+
+def number_guess(request):
+    return render(request, 'javascript_test/number_guess.html',{})

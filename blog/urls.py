@@ -21,5 +21,8 @@ urlpatterns = [
     path('post/<int:pk>/publish/', views.post_publish, name='post_publish'),
     path('post/<int:pk>/remove/',views.post_remove, name='post_remove'),
     path('post/<int:pk>/comment/', views.add_comment_to_post, name='add_comment_to_post'),
-    path('comment/<int:pk>/remove/', views.comment_remove, name='comment_remove')
+    path('comment/<int:pk>/remove/', views.comment_remove, name='comment_remove'),
+    path('javascript_test/', views.javascript_test, name='javascript_test'),
+    path('javascript_test/tutorial/', views.tutorial, name='tutorial'),
+    path('javascript_test/number_guess/', views.number_guess, name='number_guess')
     ]
