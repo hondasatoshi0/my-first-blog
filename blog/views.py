@@ -5,6 +5,41 @@ from .forms import PostForm, CommentForm
 
 from django.contrib.auth.decorators import login_required
 
+def home(request):
+    return render(request, 'main/home.html',{})
+
+def ec(request):
+    return render(request, 'main/ec.html',{})
+
+def ecaiis(request):
+    return render(request, 'main/ecaiis.html',{})
+
+def eccvr(request):
+    return render(request, 'main/eccvr.html',{})
+    
+def molding(request):
+    return render(request, 'main/molding.html',{})
+
+
+# pyscript テスト用
+def pyscript_test(request):
+    return render(request, 'pyscript_test/pyscript_test.html', {})
+
+def display(request):
+    return render(request, 'pyscript_test/display.html', {})
+
+def py_repl(request):
+    return render(request, 'pyscript_test/py_repl.html', {})
+
+def element(request):
+    return render(request, 'pyscript_test/element.html', {})
+    
+def get_event(request):
+    return render(request, 'pyscript_test/get_event.html', {})
+    
+def split_module(request):
+    return render(request, 'pyscript_test/split_module.html', {})
+    
 # Create your views here.
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')

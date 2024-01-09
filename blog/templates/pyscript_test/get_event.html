@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<div class="page-header">
+    <h1><a href="">pyscript イベントを取得</a></h1>
+</div>
+
+<button py-click="get_now()" class="py-button">現在時刻を取得</button>
+<button py-click="janken(hand=0)" class="py-button">グー</button>
+<button py-click="janken(hand=1)" class="py-button">チョキ</button>
+<button py-click="janken(hand=2)" class="py-button">パー</button>
+<div id="now"></div>
+<div id="result"></div>
+
+<py-script>
+import random
+from datetime import datetime
+from pyscript import display
+
+HANDS = ("グー", "チョキ", "パー")
+def janken(hand):
+    my_hand = random.randrange(3)
+    result = ("あいこ", "わたしの勝ち", "あなたの勝ち")[(hand - my_hand) % 3]
+    display(f"あなた：{HANDS[hand]}、わたし：{HANDS[my_hand]}、{result}", target="result")
+
+def get_now():
+    now = datetime.now()
+    display(f"{now:%Y年%m月%d日 %H:%M:%S}", target="now")
+</py-script>
+
+{% endblock content %}

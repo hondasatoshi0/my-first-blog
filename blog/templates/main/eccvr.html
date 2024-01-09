@@ -1,0 +1,28 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <py-repl></py-repl>
+    
+    <button py-click="get_now()" class="py-button">現在時刻を取得</button>
+    <button py-click="janken(hand=0)" class="py-button">グー</button>
+    <button py-click="janken(hand=1)" class="py-button">チョキ</button>
+    <button py-click="janken(hand=2)" class="py-button">パー</button>
+    <div id="now"></div>
+    <div id="result"></div>
+    <py-script>
+    import random
+    import datetime
+    from pyscript import display, Element
+    
+    def get_now():
+        now = datetime.datetime.now()
+        display(f"{now:%Y年%m月%d日 %H:%M:%S}", target="now")
+
+    HANDS = ("グー", "チョキ", "パー")
+    def janken(hand):
+        my_hand = random.randrange(3)
+        result = ("あいこ", "わたしの勝ち", "あなたの勝ち")[(hand - my_hand) % 3]
+        display(f"あなた：{HANDS[hand]}、わたし：{HANDS[my_hand]}、{result}", target="result")
+    </py-script>
+
+{% endblock content %}

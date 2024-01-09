@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<div class="page-header">
+    <h1><a href="">社内システム</a></h1>
+</div>
+<div class="content container">
+    <div class="row">
+        <p>
+            <a class="btn-flat-border" href="{% url 'ec' %}">EC関連</a>
+        </p>
+        <p>
+            <a class="btn-flat-border" href="{% url 'molding' %}">射出成形</a>
+        </p>
+        <p>
+            <a class="btn-flat-border" href="{% url 'pyscript_test' %}">pyscript test</a>
+        </p>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,27 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<div class="page-header">
+    <h1><a href="">pyscripts テスト</a></h1>
+</div>
+<div class="content container">
+    <div class="row">
+        <p>
+           <a class="btn-flat-border" href="{% url 'display' %}">display</a> 
+        </p>
+        <p>
+            <a class="btn-flat-border" href="{% url 'py_repl' %}">py_repl</a>
+        </p>
+        <p>
+            <a class="btn-flat-border" href="{% url 'element' %}">element</a>
+        </p>
+        <p>
+            <a class="btn-flat-border" href="{% url 'get_event' %}">get_event</a>
+        </p>
+        <p>
+            <a class="btn-flat-border" href="{% url 'split_module' %}">split_module</a>
+        </p>
+    </div>
+</div>
+
+{% endblock content %}

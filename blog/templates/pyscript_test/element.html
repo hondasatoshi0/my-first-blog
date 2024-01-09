@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<div class="page-header">
+    <h1><a href="">pyscript element</a></h1>
+</div>
+<div id="now"></div>
+    <py-script>
+    from datetime import datetime
+    now = datetime.now()
+
+    now_div = Element("now")
+    now_div.element.innerHTML = f"今は<b>{now:%Y年%m月%d日 %H:%M:%S}</b>です。"
+    </py-script>
+{% endblock content %}

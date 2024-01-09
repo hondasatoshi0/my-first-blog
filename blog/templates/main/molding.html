@@ -1,0 +1,46 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<div class="page-header">
+    <h1><a href="">成形</a></h1>
+</div>
+<div class="content container">
+    <div class="row">
+        <a class="btn btn-default" href="">成形ショット自動入力（H-DailyReport）</a>
+    </div>
+</div>
+
+<py-config>
+    packages = ["pyodbc"]
+</py-config>
+
+<py-script>
+import pyodbc
+
+server = "192.168.1.5\SQLEXPRESS"
+username = "sa"
+password = "taiyo3553"
+dbname = "IoTtest"
+
+#接続文字列の組み立て
+conn_str = "DRIVER={SQL Server};SERVER=" + server + \
+    ";uid=" + username + \
+    ";pwd=" + password + \
+    ";DATABASE=" + dbname
+#データベースへ接続
+print("接続")
+conn = pyodbc.connect(conn_str)
+cursor = conn.cursor()
+
+table_name = "T_製品名変換"
+
+# データ取得
+rows = cursor.execute(f"SELECT 製品名_成形機,製品ID FROM {table_name}").fetchall()
+
+for row in rows:
+    display(row,target="output")
+</py-script>
+
+<div id="output"></div>
+{% endblock content %}

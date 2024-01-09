@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<div class="page-header">
+    <h1><a href="">pyscript モジュールを分割</a></h1>
+</div>
+
+<button py-click="janken(hand=0)" class="py-button">グー</button>
+<button py-click="janken(hand=1)" class="py-button">チョキ</button>
+<button py-click="janken(hand=2)" class="py-button">パー</button>
+<div id="result"></div>
+
+<py-config>
+    [[fetch]]
+    files = ["./janken.py"]
+</py-config>
+
+<py-script src="./janken.py">
+</py-script>
+
+{% endblock content %}

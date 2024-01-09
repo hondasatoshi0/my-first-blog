@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<div class="page-header">
+    <h1><a href="">EC関連</a></h1>
+</div>
+<div class="content container">
+    <div class="row">
+        <p>
+           <a class="btn-flat-border" href="{% url 'ecaiis' %}">ECAIIS</a> 
+        </p>
+        <p>
+            <a class="btn-flat-border" href="{% url 'eccvr' %}">ECCVR</a>
+        </p>
+    </div>
+</div>
+{% endblock content %}
