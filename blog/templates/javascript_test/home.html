@@ -6,21 +6,14 @@
 </div>
 <div class="content container">
     <div class="row">
-        <p>
-            <a class="btn-flat-border" href="{% url 'tutorial' %}">チュートリアル</a>
-        </p>
-        <p>
-            <a class="btn-flat-border" href="{% url 'number_guess' %}">数あてゲーム</a>
-        </p>
-        <p>
-            <a class="btn-flat-border" href="">test3</a>
-        </p>
-        <p>
-            <a class="btn-flat-border" href="">test4</a>
-        </p>
-        <p>
-            <a class="btn-flat-border" href="">test5</a>
-        </p>
+        <h2>JavaScript 基礎編</h2>
+        <a class="btn-flat-border" href="{% url 'tutorial' %}">チュートリアル</a>
+        <br>
+        <a class="btn-flat-border" href="{% url 'number_guess' %}">作成：「数あてゲーム」</a>
+        <br>
+        <a class="btn-flat-border" href="{% url 'variable' %}">変数について</a>
+        <a class="btn-flat-border" href="{% url 'number' %}">数値と演算子について</a>
+        <a class="btn-flat-border" href="{% url 'string' %}">文字列について</a>
     </div>
 </div>
 {% endblock content %}

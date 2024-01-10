@@ -121,3 +121,12 @@ def tutorial(request):
 
 def number_guess(request):
     return render(request, 'javascript_test/number_guess.html',{})
+
+def variable(request):
+    return render(request, 'javascript_test/variable.html',{})
+
+def number(request):
+    return render(request, 'javascript_test/number.html',{})
+
+def string(request):
+    return render(request, 'javascript_test/string.html',{})

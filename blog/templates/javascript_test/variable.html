@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>変数について</title>
+        
+        <style>
+        </style>
+    </head>
+
+    <body>
+        <h1>変数について</h1>
+        <button id="button_A">押してください</button>
+        <h3 id="heading_A"></h3>
+        
+        <button id="button_B">押してください</button>
+        <h3 id="heading_B"></h3>
+        
+        <script>
+            const buttonA = document.querySelector("#button_A");
+            const headingA = document.querySelector("#heading_A");
+            
+            buttonA.onclick = () => {
+                const name  = prompt("あなたの名前は何ですか？");
+                alert(`こんにちは、${name}さん、はじめまして！`);
+                headingA.textContent = `${name}さん、ようこそ`;
+            };
+            
+            const buttonB = document.querySelector("#button_B");
+            const headingB = document.querySelector("#heading_B");
+            
+            buttonB.onclick = () => {
+                alert(`こんにちは、${prompt("あなたの名前は何ですか？")}さん、はじめまして！`);
+                headingB.textContent = `${prompt("あなたの名前は何ですか？")}さん、ようこそ`;
+            };
+        </script>
+    </body>
+</html>

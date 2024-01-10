@@ -24,5 +24,8 @@ urlpatterns = [
     path('comment/<int:pk>/remove/', views.comment_remove, name='comment_remove'),
     path('javascript_test/', views.javascript_test, name='javascript_test'),
     path('javascript_test/tutorial/', views.tutorial, name='tutorial'),
-    path('javascript_test/number_guess/', views.number_guess, name='number_guess')
+    path('javascript_test/number_guess/', views.number_guess, name='number_guess'),
+    path('javascript_test/variable/', views.variable, name='variable'),
+    path('javascript_test/number/', views.number, name='number'),
+    path('javascript_test/string/', views.string, name='string')
     ]

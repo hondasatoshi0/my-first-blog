@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>数値・演算子について</title>
+        
+        <style>
+        </style>
+    </head>
+
+    <body>
+        <h1>数値・演算子について</h1>
+        <button>起動する</button>
+        <p>マシンは停止中です。</p>
+        <script>
+            const btn = document.querySelector("button");
+            const txt = document.querySelector("p");
+            
+            btn.addEventListener("click", updateBtn);
+            
+            function updateBtn(){
+                //文字列で判定を行っている。
+                if (btn.textContent === "起動する"){
+                    btn.textContent = "停止する";
+                    txt.textContent = "マシンが起動しました！";
+                }else{
+                    btn.textContent = "起動する";
+                    txt.textContent = "マシンは停止中です。"
+                }
+            }
+        </script>
+    </body>
+</html>
