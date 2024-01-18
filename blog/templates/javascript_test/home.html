@@ -1,19 +1,84 @@
-{% extends 'main/base.html' %}
+{% extends 'javascript_test/base.html' %}
 
 {% block content %}
 <div class="page-header">
-    <h1><a href="">javascript テストページ</a></h1>
+    <h1><a href="">javascript 学習ページ</a></h1>
 </div>
 <div class="content container">
     <div class="row">
-        <h2>JavaScript 基礎編</h2>
-        <a class="btn-flat-border" href="{% url 'tutorial' %}">チュートリアル</a>
-        <br>
-        <a class="btn-flat-border" href="{% url 'number_guess' %}">作成：「数あてゲーム」</a>
-        <br>
-        <a class="btn-flat-border" href="{% url 'variable' %}">変数について</a>
-        <a class="btn-flat-border" href="{% url 'number' %}">数値と演算子について</a>
-        <a class="btn-flat-border" href="{% url 'string' %}">文字列について</a>
+        <h2>JavaScript の第一歩</h2>
+        <p>
+            <a class="btn-flat-border" href="{% url 'tutorial' %}">チュートリアル</a>
+        </p>
+        <p>
+            <a class="btn-flat-border" href="{% url 'number_guess' %}">課題１：「数あてゲーム」</a>
+        </p>
+        <p>
+            <a class="btn-flat-border" href="{% url 'variable' %}">変数について</a>
+            <a class="btn-flat-border" href="{% url 'number' %}">数値と演算子について</a>
+            <a class="btn-flat-border" href="{% url 'string' %}">文字列について</a>
+            <a class="btn-flat-border" href="{% url 'array' %}">配列について</a>
+        </p>
+        <p>
+            <a class="btn-flat-border" href="{% url 'Generate_random_story' %}">課題２：「バカ話ジェネレーター」</a>
+        </p>
+        
+        <h2>JavaScript building blocks</h2>
+        <p>
+            <a class="btn-flat-border" href="{% url 'if_function' %}">条件文</a>
+        </p>
+        <p>
+            <a class="btn-flat-border" href="{% url 'loop_function' %}">ループ</a>
+            <a class="btn-flat-border" href="{% url 'loop_function_skillcheck1' %}">ループ_課題1</a>
+            <a class="btn-flat-border" href="{% url 'loop_function_skillcheck2' %}">ループ_課題2</a>
+            <a class="btn-flat-border" href="{% url 'loop_function_skillcheck3' %}">ループ_課題3</a>
+        </p>
+        <p>
+            <a class="btn-flat-border" href="{% url 'usefunction_draw' %}">関数使用例（描画）</a>
+            <a class="btn-flat-border" href="{% url 'usefunction_scope' %}">関数使用例（スコープ）</a>
+            <a class="btn-flat-border" href="{% url 'usefunction_skillcheck1' %}">関数_課題1</a>
+            <a class="btn-flat-border" href="{% url 'usefunction_skillcheck2' %}">関数_課題2</a>
+            <a class="btn-flat-border" href="{% url 'usefunction_skillcheck3' %}">関数_課題3</a>
+            <a class="btn-flat-border" href="{% url 'usefunction_skillcheck4' %}">関数_課題4</a>
+        </p>
+        <p>
+            <a class="btn-flat-border" href="{% url 'ownfunction' %}">独自の関数</a>
+        </p>
+        <p>
+            <a class="btn-flat-border" href="{% url 'return_function1' %}">関数戻り値</a>
+            <a class="btn-flat-border" href="{% url 'return_function2' %}">関数戻り値_実践</a>
+        </p>
+        <p>
+            <a class="btn-flat-border" href="{% url 'event_listener' %}">イベント入門</a>
+            <a class="btn-flat-border" href="{% url 'event_video' %}">動画再生</a>
+            <a class="btn-flat-border" href="{% url 'event_tile' %}">タイル</a>
+            <a class="btn-flat-border" href="{% url 'event_skillcheck1' %}">イベント_課題1</a>
+            <a class="btn-flat-border" href="{% url 'event_skillcheck2' %}">イベント_課題2(エイム)</a>
+            <a class="btn-flat-border" href="{% url 'event_skillcheck3' %}">イベント_課題3</a>
+        </p>
+        <p>
+            <a class="btn-flat-border" href="{% url 'gallery' %}">ギャラリー</a>
+        </p>
+        
+        <h2>Introducing JavaScript objects</h2>
+        <p>
+            <a class="btn-flat-border" href="{% url 'object_basic' %}">オブジェクトの基本</a>
+            <a class="btn-flat-border" href="{% url 'object_skillcheck1' %}">オブジェクトの基本_課題1</a>
+            <a class="btn-flat-border" href="{% url 'object_skillcheck2' %}">オブジェクトの基本_課題2</a>
+            <a class="btn-flat-border" href="{% url 'object_skillcheck3' %}">オブジェクトの基本_課題3</a>
+        </p>
+        <p>
+            <a class="btn-flat-border" href="{% url 'object_prototype' %}">オブジェクトのプロトタイプ</a>
+        </p>
+        <p>
+            <a class="btn-flat-border" href="{% url 'object_oriented_programming' %}">オブジェクト指向プログラミング</a>
+            <a class="btn-flat-border" href="{% url 'object_oriented_programming_skillcheck' %}">オブジェクト指向プログラミング_課題</a>
+        </p>
+        <p>
+            <a class="btn-flat-border" href="{% url 'working_with_json' %}">JSONの操作</a>
+            <a class="btn-flat-border" href="{% url 'working_with_json_skillcheck' %}">JSONの操作_課題1</a>
+        </p>
+    
     </div>
 </div>
 {% endblock content %}

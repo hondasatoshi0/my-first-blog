@@ -130,3 +130,99 @@ def number(request):
 
 def string(request):
     return render(request, 'javascript_test/string.html',{})
+    
+def array(request):
+    return render(request, 'javascript_test/array.html',{})
+
+def Generate_random_story(request):
+    return render(request, 'javascript_test/Generate_random_story.html',{})
+    
+def if_function(request):
+    return render(request, 'javascript_test/if_function.html',{})
+
+def loop_function(request):
+    return render(request, 'javascript_test/loop_function.html',{})
+
+def loop_function_skillcheck1(request):
+    return render(request, 'javascript_test/loop_function_skillcheck1.html',{})
+
+def loop_function_skillcheck2(request):
+    return render(request, 'javascript_test/loop_function_skillcheck2.html',{})
+
+def loop_function_skillcheck3(request):
+    return render(request, 'javascript_test/loop_function_skillcheck3.html',{})
+
+def usefunction_draw(request):
+    return render(request, 'javascript_test/usefunction_draw.html',{})
+    
+def usefunction_scope(request):
+    return render(request, 'javascript_test/usefunction_scope.html',{})
+    
+def usefunction_skillcheck1(request):
+    return render(request, 'javascript_test/usefunction_skillcheck1.html',{})
+
+def usefunction_skillcheck2(request):
+    return render(request, 'javascript_test/usefunction_skillcheck2.html',{})
+
+def usefunction_skillcheck3(request):
+    return render(request, 'javascript_test/usefunction_skillcheck3.html',{})
+
+def usefunction_skillcheck4(request):
+    return render(request, 'javascript_test/usefunction_skillcheck4.html',{})
+
+def ownfunction(request):
+    return render(request, 'javascript_test/ownfunction.html',{})
+
+def return_function1(request):
+    return render(request, 'javascript_test/return_function1.html',{})
+    
+def return_function2(request):
+    return render(request, 'javascript_test/return_function2.html',{})
+
+def event_listener(request):
+    return render(request, 'javascript_test/event_listener.html',{})
+
+def event_video(request):
+    return render(request, 'javascript_test/event_video.html',{})
+
+def event_tile(request):
+    return render(request, 'javascript_test/event_tile.html',{})
+
+def event_skillcheck1(request):
+    return render(request, 'javascript_test/event_skillcheck1.html',{})
+
+def event_skillcheck2(request):
+    return render(request, 'javascript_test/event_skillcheck2.html',{})
+
+def event_skillcheck3(request):
+    return render(request, 'javascript_test/event_skillcheck3.html',{})
+    
+def gallery(request):
+    return render(request, 'javascript_test/gallery.html',{})
+
+def object_basic(request):
+    return render(request, 'javascript_test/object_basic.html',{})
+
+def object_skillcheck1(request):
+    return render(request, 'javascript_test/object_skillcheck1.html',{})
+
+def object_skillcheck2(request):
+    return render(request, 'javascript_test/object_skillcheck2.html',{})
+
+def object_skillcheck3(request):
+    return render(request, 'javascript_test/object_skillcheck3.html',{})
+    
+def object_prototype(request):
+    return render(request, 'javascript_test/object_prototype.html',{})
+    
+def object_oriented_programming(request):
+    return render(request, 'javascript_test/object_oriented_programming.html',{})
+
+def object_oriented_programming_skillcheck(request):
+    return render(request, 'javascript_test/object_oriented_programming_skillcheck.html',{})
+
+def working_with_json(request):
+    return render(request, 'javascript_test/working_with_json.html',{})
+
+def working_with_json_skillcheck(request):
+    return render(request, 'javascript_test/working_with_json_skillcheck.html',{})

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <title>オブジェクト指向プログラミング_課題</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" />
+  </head>
+
+  <body>
+    <h1>オブジェクト指向プログラミング_課題</h1>
+    <section class="preview">
+    </section>
+    <p id="output"></p>
+
+  </body>
+  <script>
+  let output = document.querySelector('#output');
+  
+  class Shape {
+    name;
+    sides;
+    sideLength;
+
+    constructor(name,sides,sideLength){
+        this.name = name;
+        this.sides = sides;
+        this.sideLength = sideLength;
+    }
+    
+    calcPerimeter(){
+        let para = document.createElement(`p`);
+        para.textContent += `図形名：${this.name}\n`;        
+        para.textContent += `辺の数：${this.sides}\n`;        
+        para.textContent += `辺の長さ：${this.sideLength}\n`;
+        para.textContent += `外周の長さ：${this.sides * this.sideLength}\n`;
+        const section = document.querySelector('section');
+        section.appendChild(para);
+    }
+  }
+  
+    class Square extends Shape{
+        sideLength;
+        constructor(sideLength){
+            super('正方形',4,sideLength);
+            this.sideLength = sideLength;
+        }
+      
+        calcArea(){
+            output.textContent = `面積：${this.sideLength ** 2}`
+        }
+        
+    }
+  
+  const square = new Shape("正方形",4,5);
+  square.calcPerimeter();
+  
+  const square2 = new Square(5);
+  square2.calcArea();
+  
+  </script>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>文字列について</title>
+        
+        <style>
+        </style>
+    </head>
+
+    <body>
+        <h1>文字列について</h1>
+        
+        <label for="search">連絡先の名前: </label>
+        <input id="search" type="text" />
+        <button id="btn-search">検索</button>
+        
+        <p id="output1"></p>
+        
+        <label for="number">数値を入力してください: </label>
+        <input id="number" type="text" />
+        <button id="btn-number">整数の平方を生成</button>
+        
+        <p id="output2">出力:</p>
+        
+        <script>
+            const contacts = [　"クリス:2232322",
+                                "サラ:3453456",
+                                "ビル:7654322",
+                                "メアリー:9998769",
+                                "ダイアン:9384975",
+                                ];
+            const para = document.querySelector("#output1");
+            const input = document.querySelector("#search");
+            const btn = document.querySelector("#btn-search");
+            
+            btn.addEventListener("click", () => {
+                const searchName = input.value.toLowerCase();
+                input.value = "";
+                input.focus();
+                para.textContent = "";
+                for (const contact of contacts) {
+                    const splitContact = contact.split(":");
+                    if (splitContact[0].toLowerCase() === searchName) {
+                        para.textContent = `${splitContact[0]}の電話番号は${splitContact[1]}です。`;
+                         break;
+                    }
+                }
+                if (para.textContent === "") {
+                    para.textContent = "連絡先が見つかりません。";
+                }
+            });
+            
+            const para2 = document.querySelector("#output2");
+            const input2 = document.querySelector("#number");
+            const btn2 = document.querySelector("#btn-number");
+            
+            btn2.addEventListener("click", () => {
+              para2.textContent = "出力: ";
+              const num = input2.value;
+              input2.value = "";
+              input2.focus();
+              for (let i = 1; i <= num; i++) {
+                let sqRoot = Math.sqrt(i);
+                if (Math.floor(sqRoot) !== sqRoot) {
+                  continue;
+                }
+                para2.textContent += `${i} `;
+              }
+            });
+
+        </script>
+    </body>
+</html>

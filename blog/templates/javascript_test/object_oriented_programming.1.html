@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>プロジェクト指向プログラミング</title>
+        <style type="text/css" src="{% static 'css/style.css' %">
+        </style>
+    </head>
+    <body>
+        <h1>プロジェクト指向プログラミング</h1>
+        
+        <section class="preview"></section>
+        
+        <script>
+            let para = document.createElement("p");
+            
+            class Person{
+                name;
+                constructor(name){
+                    this.name = name;
+                }
+                
+                introduceSelf(){
+                    para.textContent += `Hi!${this.name}.\n`;
+                }
+            }
+            
+
+            
+            class Professor extends Person{
+                teaches;
+                
+                constructor(name,teaches){
+                    super(name);
+                    this.teaches = teaches;
+                }
+                
+                introduceSelf(){
+                    para.textContent += `I\'m ${this.name},teach ${this.teaches}.\n`;
+                }
+            }
+        
+
+            class Student extends Person{
+                #year;
+                
+                constructor(name,year){
+                    super(name);
+                    this.#year = year;
+                }
+                
+                introduceSelf(){
+                    para.textContent += `${this.name},${this.#year}.\n`;
+                }
+                
+                grade(){
+                    let score = Math.random() * 100;
+                    if (score >= 80){
+                        para.textContent += `good!! you grade ${score}.\n`;
+                    }else{
+                        para.textContent += `you grade ${score}.\n`;
+                    }
+                    
+                    
+                }
+            }
+            
+            const personA = new Person('satoshi');
+            personA.introduceSelf();
+            
+            const professorB = new Professor('raina','Math');
+            professorB.introduceSelf();
+            
+            const studentC = new Student('asuka',2);
+            studentC.introduceSelf();
+            studentC.grade();
+
+            const section = document.querySelector('section');
+            section.appendChild(para);
+        </script>
+    </body>
+</html>

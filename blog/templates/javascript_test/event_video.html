@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+        <title>明るい配色のウェブページ</title>
+    </head>
+    <body>
+        <main class="container">
+            <div class="grid">
+                <section>
+                    <hgroup>
+                        <div class="hidden">
+                            <video id="video1" width="320" height="240" preload="auto" controls>
+                                <source src="{% static 'movie/IMG_4458.webm' %}" type="video/webm">
+                                お使いのブラウザはビデオタグをサポートしていません。
+                            </video>
+                        </div>
+                        <button id="playButton">動画を再生</button>
+                    </hgroup>
+
+                    <!-- 動画1の埋め込み -->
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/QEXQEM7z7pM?si=JAEfVSrYfHKU8LO6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>                    
+
+                </section>
+            </div>
+        </main>
+    
+        <script src="static 'Scripts/video.js'"></script>
+    
+    </body>
+</html>

@@ -1,0 +1,18 @@
+{% load static %}
+<html>
+    <head>
+        <title>ギャラリー</title>
+        <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
+    </head>
+    <h1>Image gallery example</h1>
+    
+    <div class="full-img">
+          <img class="displayed-img" src="{% static 'images/pic1.jpg' %}" />
+          <div class="overlay"></div>
+          <button class="dark">Darken</button>
+    </div>
+    
+    <div class="thumb-bar"></div>
+    <script src="{% static 'Scripts/gallery.js' %}">
+    </script>
+</html>

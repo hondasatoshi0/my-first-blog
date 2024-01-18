@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>条件文について</title>
+        
+        <style>
+        </style>
+    </head>
+
+    <body>
+        <h1>条件文について</h1>
+        <label for="weather">今日の天気を選択してください: </label>
+        <select id="weather">
+            <option value="">--選択してください--</option>
+            <option value="sunny">晴れ</option>
+            <option value="rainy">雨</option>
+            <option value="snowing">雪</option>
+            <option value="overcast">曇り</option>
+        </select>
+        
+        <p></p>
+        <label for="theme">テーマを選んでください: </label>
+        <select id="theme">
+          <option value="white">白</option>
+          <option value="black">黒</option>
+          <option value="purple">紫</option>
+          <option value="yellow">黄</option>
+          <option value="psychedelic">psychedelic</option>
+        </select>
+        
+        <h1>私のウェブサイト</h1>
+        
+        
+        <script>
+            const select = document.querySelector("#weather");
+            const para = document.querySelector("p");
+            
+            select.addEventListener("change", setWeather);
+            
+            function setWeather() {
+              const choice = select.value;
+            
+              switch (choice) {
+                case "sunny":
+                  para.textContent =
+                    "今日はとてもいい天気です。短いパンツをはいて、砂浜や公園に出かけ、アイスクリームを食べましょう！";
+                  break;
+                case "rainy":
+                  para.textContent =
+                    "雨が降っています。レインコートと傘を忘れないようにしましょう。";
+                  break;
+                case "snowing":
+                  para.textContent =
+                    "雪が降ってとても寒いです！室内でホットチョコレートを飲むか、雪だるまを作るのがよいでしょう。";
+                  break;
+                case "overcast":
+                  para.textContent =
+                    "雨は降っていませんが、空はとても暗くなっています。万が一に備えレインコートを持ちましょう。";
+                  break;
+                default:
+                  para.textContent = "";
+              }
+            }
+            
+            const select1 = document.querySelector("#theme");
+            const html = document.querySelector("html");
+            document.body.style.padding = "10px";
+            
+            function update(bgColor, textColor) {
+              html.style.backgroundColor = bgColor;
+              html.style.color = textColor;
+            }
+            
+            select1.onchange = function () {
+                const choice1 = select1.value;
+                switch (choice1) {
+                    case "black":
+                        update("black", "white");
+                        break;
+                    case "white":
+                        update("white", "black");
+                        break;
+                    case "purple":
+                        update("purple", "white");
+                        break;
+                    case "yellow":
+                        update("yellow", "black");
+                        break;
+                    case "psychedelic":
+                        update("psychedelic", "white");
+                        break;
+        
+                        
+                }
+
+            };
+        </script>
+    </body>
+</html>

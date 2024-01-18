@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Events: Task 2</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      canvas {
+        border: 1px solid black;
+      }
+      
+      
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+    <canvas width="1400" height="600" tabindex="0">
+    </canvas>
+    <p id=score>Score:</p>
+
+  <script>
+    const canvas = document.querySelector('canvas');
+    const ctx = canvas.getContext('2d');
+
+    function drawCircle(x, y, size) {
+      ctx.fillStyle = 'white';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.beginPath();
+      ctx.fillStyle = 'black';
+      ctx.arc(x, y, size, 0, 2 * Math.PI, false);
+      ctx.fill();
+    }
+
+    const size = 20;    
+    let x = Math.floor(Math.random()*1400);
+    let y = Math.floor(Math.random()*600);
+    
+    drawCircle(x, y, size);
+
+    let point = 0;
+    let paraScore = document.querySelector("#score");
+    paraScore.textContent = `Score:${point}`;
+    document.body.addEventListener('click',
+        ()=>{
+            if((x - event.clientX)**2 + (y - event.clientY)**2 <= size**2){
+                point+=1;
+                paraScore.textContent = `Score:${point}`;
+                x = Math.floor(Math.random()*1400);
+                y = Math.floor(Math.random()*600);
+                drawCircle(x,y,size);
+            }else{
+                point-=1;
+                paraScore.textContent = `Score:${point}`;
+            }
+            
+    });
+
+
+  </script>
+  </body>
+  
+</html>
