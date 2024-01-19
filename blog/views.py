@@ -226,3 +226,9 @@ def working_with_json(request):
 
 def working_with_json_skillcheck(request):
     return render(request, 'javascript_test/working_with_json_skillcheck.html',{})
+    
+def object_building_practice(request):
+    return render(request, 'javascript_test/object_building_practice.html',{})
+    
+def bouncing_balls_demo(request):
+    return render(request, 'javascript_test/bouncing_balls_demo.html',{})

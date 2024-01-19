@@ -59,5 +59,7 @@ urlpatterns = [
     path('javascript_test/event_listener/object_oriented_programming', views.object_oriented_programming,name='object_oriented_programming'),
     path('javascript_test/event_listener/object_oriented_programming_skillcheck', views.object_oriented_programming_skillcheck,name='object_oriented_programming_skillcheck'),
     path('javascript_test/event_listener/working_with_json', views.working_with_json,name='working_with_json'),
-    path('javascript_test/event_listener/working_with_json_skillcheck', views.working_with_json_skillcheck,name='working_with_json_skillcheck')
+    path('javascript_test/event_listener/working_with_json_skillcheck', views.working_with_json_skillcheck,name='working_with_json_skillcheck'),
+    path('javascript_test/event_listener/object_building_practice', views.object_building_practice,name='object_building_practice'),
+    path('javascript_test/event_listener/bouncing_balls_demo', views.bouncing_balls_demo,name='bouncing_balls_demo')
     ]
